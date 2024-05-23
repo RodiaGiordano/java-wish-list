@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class WhisList {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
+
         ArrayList<String> wishList = new ArrayList<>();
 
         File file = new File("./resources/wishList.txt");
@@ -30,6 +30,7 @@ public class WhisList {
 
         boolean addGift = true;
 
+       Scanner scanner = new Scanner(System.in);
        try(FileWriter fileWriter = new FileWriter(file, true)) {
            while (addGift) {
                System.out.println("Inserisci il nome del regalo");
@@ -50,23 +51,13 @@ public class WhisList {
            }
        }catch(IOException e){
            System.out.println(e.getMessage());
-       }
+       }finally{
         scanner.close();
+
+       }
 
         Collections.sort(wishList);
 
-       /* try( FileWriter fileWriter = new FileWriter(file, true)){
-
-            for(String element: wishList){
-                fileWriter.write(element + System.lineSeparator());
-            }
-
-        }catch(IOException e){
-            System.out.println(e.getMessage());
-        } */
-
-
         System.out.println(wishList);
-
     }
 }
