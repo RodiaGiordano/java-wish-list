@@ -29,6 +29,11 @@ public class CharCounter {
 
         }
 
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+        /*
+
         Iterator<Map.Entry<Character, Integer>> iter = map.entrySet().iterator();
 
         while(iter.hasNext()){
@@ -37,7 +42,7 @@ public class CharCounter {
 
         }
 
-
+*/
 
 
     }
